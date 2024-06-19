@@ -13,6 +13,8 @@ class Router
     {
         if (!isset($get["route"])) {
             $this->bc->home();
+        } else if ($get["route"] === "category") {
+            $this->bc->category($get["category_id"]);
         } else {
             $this->bc->home();
         }
