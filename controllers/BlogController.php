@@ -4,6 +4,8 @@ class BlogController extends AbstractController
 {
     public function home(): void
     {
-        $this->render("home.html.twig", []);
+        $postManager = new PostManager;
+        $posts = $postManager->findAll();
+        $this->render("home.html.twig", ["posts" => $posts]);
     }
 }

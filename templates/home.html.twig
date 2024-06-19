@@ -1,6 +1,17 @@
 {% extends "layout.html.twig" %}
 
+{% block header %}
+	<nav>
+		<a href="">Development</a>
+		<a href="">Design</a>
+		<a href="">Accessibility</a>
+	</nav>
+{% endblock %}
+
 {% block main %}
 	<h1>Page d'accueil</h1>
-
+	{% for post in posts %}
+		<h2>{{post.title}}</h2>
+		<p>{{post.excerpt}}</p>
+	{% endfor %}
 {% endblock %}
